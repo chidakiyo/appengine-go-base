@@ -1,0 +1,16 @@
+application: sample ##
+version: 0-0-1
+runtime: go
+api_version: go1.8
+threadsafe: true
+
+handlers:
+
+- url: /favicon\.ico
+  static_files: assets/favicon.ico
+  upload: assets/favicon\.ico
+  expiration: "30s"
+  application_readable: true
+
+- url: /.*
+  script: _go_app
